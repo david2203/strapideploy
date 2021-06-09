@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "purchases",
+  "info": {
+    "name": "Purchase",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "email": {
+      "type": "string"
+    },
+    "mobile": {
+      "type": "biginteger"
+    },
+    "typeOfDelivery": {
+      "type": "string"
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "purchases"
+    },
+    "product": {
+      "model": "product",
+      "via": "purchases"
+    },
+    "quantity": {
+      "type": "biginteger"
+    }
+  }
+}
